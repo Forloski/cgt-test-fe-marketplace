@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-location";
 import React from "react";
 
 const HomePage = () => {
@@ -8,7 +9,7 @@ const HomePage = () => {
         You are probably interested in <a href="/products/a">A</a>.
       </p>
       <p>
-        Check out the newest product <a href="/products/b">B</a>!
+        Check out the newest product <Link to="/products/b">B</Link>!
       </p>
     </div>
   );

@@ -1,15 +1,25 @@
 import React from "react";
-import { ReactLocation, Router, Outlet, Route, DefaultGenerics } from "@tanstack/react-location";
+import {
+  ReactLocation,
+  Router,
+  Outlet,
+  Route,
+  DefaultGenerics,
+  Navigate,
+} from "@tanstack/react-location";
 import HomePage from "../pages/Home/Home.page";
 import CartPage from "../pages/Cart/Cart.page";
+import ProductsPage from "../pages/Products/Products.page";
+import products from "./data";
+import { LocationGenerics } from "../types";
 
 type Props = {
   children: React.ReactNode;
 };
 
-const location = new ReactLocation();
+const location = new ReactLocation<LocationGenerics>();
 
-const routes: Route<DefaultGenerics>[] = [
+const routes: Route<LocationGenerics>[] = [
   {
     path: "/",
     element: <HomePage />,
@@ -17,6 +27,17 @@ const routes: Route<DefaultGenerics>[] = [
   {
     path: "cart",
     element: <CartPage />,
+  },
+  {
+    path: "products/:productId",
+    element: <ProductsPage />,
+    loader: ({ params }) => ({
+      product: products.find((product) => product.id === params.productId),
+    }),
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" />,
   },
 ];
 
