@@ -1,12 +1,5 @@
-import React from "react";
-import {
-  ReactLocation,
-  Router,
-  Outlet,
-  Route,
-  DefaultGenerics,
-  Navigate,
-} from "@tanstack/react-location";
+import { ReactNode } from "react";
+import { ReactLocation, Router, Outlet, Route, Navigate } from "@tanstack/react-location";
 import HomePage from "../pages/Home/Home.page";
 import CartPage from "../pages/Cart/Cart.page";
 import ProductsPage from "../pages/Products/Products.page";
@@ -14,7 +7,7 @@ import products from "./data";
 import { LocationGenerics } from "../types";
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 const location = new ReactLocation<LocationGenerics>();

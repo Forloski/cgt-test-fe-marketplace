@@ -1,15 +1,15 @@
-import React, { createContext, useMemo, useCallback } from "react";
+import { createContext, useMemo, useCallback, useContext, useState, ReactNode } from "react";
 import { Product } from "../types";
 
 type ProviderProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 type ProductOnCart = Product & {
   quantity: number;
 };
 
-type CartManagementCcontext = {
+type CartManagementContext = {
   cart: ProductOnCart[];
   cartTotal: number;
   cartCount: number;
@@ -18,12 +18,12 @@ type CartManagementCcontext = {
   clearCart: () => void;
 };
 
-const CartManagement = createContext<CartManagementCcontext | undefined>(undefined);
+const CartManagement = createContext<CartManagementContext | undefined>(undefined);
 
 const CartManagementProvider = ({ children }: ProviderProps) => {
-  const [cart, setCart] = React.useState<ProductOnCart[]>([]);
-  const [cartTotal, setCartTotal] = React.useState(0);
-  const [cartCount, setCartCount] = React.useState(0);
+  const [cart, setCart] = useState<ProductOnCart[]>([]);
+  const [cartTotal, setCartTotal] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
 
   const calculateTotal = useCallback(() => {
     let total = 0;
@@ -88,7 +88,7 @@ const CartManagementProvider = ({ children }: ProviderProps) => {
 };
 
 const useCartManagement = () => {
-  const context = React.useContext(CartManagement);
+  const context = useContext(CartManagement);
 
   if (context === undefined) {
     throw new Error("useCount must be used within a CartManagementProvider");

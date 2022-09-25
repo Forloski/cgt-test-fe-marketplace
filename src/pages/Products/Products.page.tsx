@@ -1,4 +1,3 @@
-import React from "react";
 import { useMatch, Navigate } from "@tanstack/react-location";
 import { LocationGenerics } from "../../types";
 

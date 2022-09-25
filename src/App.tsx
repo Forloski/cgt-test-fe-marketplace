@@ -1,28 +1,14 @@
-import React from "react";
 import Routes from "./routes/Routes";
-import { Link } from "@tanstack/react-location";
+import Contexts from "./contexts";
+import DefaultLayout from "./layouts/Default/Default.layout";
 
 function App() {
   return (
-    <Routes>
-      <main>
-        <header>
-          90s shop
-          <nav>
-            <ul style={{ listStyleType: "none", display: "flex" }}>
-              <li>
-                <Link to="/">Home </Link>
-              </li>
-              |
-              <li>
-                <Link to="/cart">Cart </Link>
-              </li>
-            </ul>
-          </nav>
-          <hr />
-        </header>
-      </main>
-    </Routes>
+    <Contexts>
+      <Routes>
+        <DefaultLayout />
+      </Routes>
+    </Contexts>
   );
 }
 

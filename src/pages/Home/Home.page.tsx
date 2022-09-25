@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-location";
-import React from "react";
 
 const HomePage = () => {
   return (
