@@ -2,10 +2,6 @@ import React from "react";
 import Routes from "./routes/Routes";
 import { Link } from "@tanstack/react-location";
 
-function cartItems() {
-  return [];
-}
-
 function App() {
   return (
     <Routes>
@@ -19,7 +15,7 @@ function App() {
               </li>
               |
               <li>
-                <Link to="/cart">Cart ({cartItems().length}) </Link>
+                <Link to="/cart">Cart </Link>
               </li>
             </ul>
           </nav>
