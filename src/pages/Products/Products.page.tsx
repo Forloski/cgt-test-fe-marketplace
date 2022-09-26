@@ -18,13 +18,15 @@ const ProductsPage = () => {
   if (product) {
     return (
       <div>
-        <h1>Product {product.name}</h1>
-        <p>Price: {product.price} USD</p>
+        <h1 id="txt-name">Product {product.name}</h1>
+        <p id="txt-price">Price: {product.price} USD</p>
 
-        <button onClick={() => cartManagement.addToCart(product)}>Add to cart</button>
+        <button id="btn-add-to-cart" onClick={() => cartManagement.addToCart(product)}>
+          Add to cart
+        </button>
 
         <div>
-          <img src={(images as any)[product.picture]} width={640} />
+          <img id="product-image" src={(images as any)[product.picture]} width={640} />
         </div>
       </div>
     );

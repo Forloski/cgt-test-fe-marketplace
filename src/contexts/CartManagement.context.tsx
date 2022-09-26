@@ -19,6 +19,7 @@ type ProviderProps = {
 
 type CartManagementContext = {
   cart: Cart | undefined;
+  isCartLoading: boolean;
   cartTotal: number;
   cartCount: number;
   addToCart: (product: Product) => void;
@@ -32,7 +33,7 @@ const CartManagementProvider = ({ children }: ProviderProps) => {
   const { localUserIdentifier } = useLocalUserIdentifier();
   const postCart = usePostCart();
   const putCart = usePutCart();
-  const { data: cart } = useGetCart(
+  const { data: cart, isLoading: isCartLoading } = useGetCart(
     localUserIdentifier,
     ["carts", localUserIdentifier],
     {},
@@ -102,13 +103,14 @@ const CartManagementProvider = ({ children }: ProviderProps) => {
   const value = useMemo(
     () => ({
       cart,
+      isCartLoading,
       cartTotal,
       cartCount,
       addToCart,
       removeFromCart,
       clearCart,
     }),
-    [cart, cartTotal, cartCount, addToCart, removeFromCart, clearCart]
+    [cart, isCartLoading, cartTotal, cartCount, addToCart, removeFromCart, clearCart]
   );
 
   return <CartManagement.Provider value={value}>{children}</CartManagement.Provider>;
