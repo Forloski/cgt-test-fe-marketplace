@@ -7,12 +7,12 @@ import { queryService } from "./services/query/query.service";
 
 function App() {
   return (
-    <QueryClientProvider client={queryService}>
-      <Routes>
-        <Contexts>
+    <QueryClientProvider client={queryService} contextSharing>
+      <Contexts>
+        <Routes>
           <DefaultLayout />
-        </Contexts>
-      </Routes>
+        </Routes>
+      </Contexts>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

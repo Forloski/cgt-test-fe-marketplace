@@ -5,4 +5,5 @@ export type LocationGenerics = MakeGenerics<{
   LoaderData: {
     product: Product;
   };
+  Params: { productId: string };
 }>;

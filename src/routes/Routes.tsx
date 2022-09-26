@@ -3,7 +3,6 @@ import { ReactLocation, Router, Outlet, Route, Navigate } from "@tanstack/react-
 import HomePage from "../pages/Home/Home.page";
 import CartPage from "../pages/Cart/Cart.page";
 import ProductsPage from "../pages/Products/Products.page";
-import products from "./data";
 import { LocationGenerics } from "../types";
 
 type Props = {
@@ -24,12 +23,8 @@ const routes: Route<LocationGenerics>[] = [
   {
     path: "products/:productId",
     element: <ProductsPage />,
-    loader: ({ params }) => ({
-      product: products.find((product) => product.id === params.productId),
-    }),
   },
   {
-    path: "*",
     element: <Navigate to="/" />,
   },
 ];

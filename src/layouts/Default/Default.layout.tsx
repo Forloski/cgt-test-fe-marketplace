@@ -1,6 +1,9 @@
 import { Link } from "@tanstack/react-location";
+import { useCartManagement } from "../../contexts/CartManagement.context";
 
 const DefaultLayout = () => {
+  const cartManagement = useCartManagement();
+
   return (
     <main>
       <header>
@@ -12,7 +15,7 @@ const DefaultLayout = () => {
             </li>
             |
             <li>
-              <Link to="/cart">Cart </Link>
+              <Link to="/cart">Cart ({cartManagement.cartCount}) </Link>
             </li>
           </ul>
         </nav>
