@@ -11,11 +11,15 @@ const DefaultLayout = () => {
         <nav>
           <ul style={{ listStyleType: "none", display: "flex" }}>
             <li>
-              <Link to="/">Home </Link>
+              <Link id="link-to-home" to="/">
+                Home{" "}
+              </Link>
             </li>
             |
             <li>
-              <Link to="/cart">Cart ({cartManagement.cartCount}) </Link>
+              <Link id="link-to-cart" to="/cart">
+                Cart ({cartManagement.cartCount}){" "}
+              </Link>
             </li>
           </ul>
         </nav>
