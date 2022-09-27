@@ -1,13 +1,6 @@
 import { Link } from "@tanstack/react-location";
-import { useLocalUserIdentifier } from "../../contexts/LocalUSerIdentifier.context";
-import { useGetCart } from "../../queries/carts/getCart.query";
 
 const HomePage = () => {
-  const { localUserIdentifier } = useLocalUserIdentifier();
-  const { data: cart } = useGetCart(localUserIdentifier, ["carts", localUserIdentifier]);
-
-  console.log(cart);
-
   return (
     <div>
       Welcome to our shop!
