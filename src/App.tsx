@@ -9,9 +9,7 @@ function App() {
   return (
     <QueryClientProvider client={queryService} contextSharing>
       <Contexts>
-        <Routes>
-          <DefaultLayout />
-        </Routes>
+        <Routes />
       </Contexts>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

@@ -4,9 +4,10 @@ import HomePage from "../pages/Home/Home.page";
 import CartPage from "../pages/Cart/Cart.page";
 import ProductsPage from "../pages/Products/Products.page";
 import { LocationGenerics } from "../types";
+import DefaultLayout from "../layouts/Default/Default.layout";
 
 type Props = {
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 const location = new ReactLocation<LocationGenerics>();
@@ -32,8 +33,10 @@ const routes: Route<LocationGenerics>[] = [
 const Routes = (props: Props) => {
   return (
     <Router location={location} routes={routes}>
-      {props.children}
-      <Outlet />
+      <DefaultLayout>
+        {props.children}
+        <Outlet />
+      </DefaultLayout>
     </Router>
   );
 };

@@ -13,5 +13,26 @@
       "picture": "pictureB"
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "id": "a85a3d57-f625-47ab-9888-a84809257718-4ac7b98d-7595-4b59-a6af-efe3d7738dc8",
+      "products": []
+    },
+    {
+      "id": "53249186-1055-4579-9271-1640433e45b7-2e14e0de-67a7-434f-a179-eae213bd4c29",
+      "products": []
+    },
+    {
+      "id": "5f9ba354-baa0-4a08-926a-279ec9b8110a-9ce4d275-43d3-4018-aa14-47ae429e9ac5",
+      "products": []
+    },
+    {
+      "id": "8ecb8151-adcf-4d21-8d66-61165b87b777-3017d60f-7b6c-4e60-91d1-3480a0a9e4ec",
+      "products": []
+    },
+    {
+      "id": "a4a34909-a2cb-4d0b-aeb2-a123bf5101dc-c8115f0f-bef5-4a8c-a57c-98fb1be8e367",
+      "products": []
+    }
+  ]
 }

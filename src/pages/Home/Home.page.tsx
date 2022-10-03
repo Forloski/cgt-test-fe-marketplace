@@ -1,23 +1,34 @@
-import { Link } from "@tanstack/react-location";
+import { Box, Typography } from "@mui/material";
+import { CardInterested } from "../../components/CardInterested/CardInterested.component";
+import { useGetProducts } from "../../queries/products/getProducts.query";
 
 const HomePage = () => {
+  const { data: products } = useGetProducts(["products"]);
+
   return (
     <div>
-      Welcome to our shop!
-      <p>
-        You are probably interested in{" "}
-        <Link id="link-to-product-a" to="/products/a">
-          A
-        </Link>
-        .
-      </p>
-      <p>
-        Check out the newest product{" "}
-        <Link id="link-to-product-b" to="/products/b">
-          B
-        </Link>
-        !
-      </p>
+      <Box
+        m={4}
+        sx={{
+          display: "flex",
+          gap: "16px",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Typography variant="h4" component="h1">
+          Welcome to ur Shop!
+        </Typography>
+        <Typography variant="h4" component="h1">
+          Products you might be interested in:
+        </Typography>
+      </Box>
+      <Box sx={{ display: "flex", flexDirection: "row", gap: "16px" }}>
+        {products?.map((product) => (
+          <CardInterested product={product} />
+        ))}
+      </Box>
     </div>
   );
 };
