@@ -43,6 +43,7 @@ export const CardInterested = ({ product }: Props) => {
           Add to Cart
         </Button>
         <Button
+          id={`link-to-product-${product.name.toLowerCase()}`}
           color="secondary"
           onClick={() => navigate({ to: `/products/${product.name.toLowerCase()}` })}
         >

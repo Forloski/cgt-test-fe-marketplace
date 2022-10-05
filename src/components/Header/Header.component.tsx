@@ -21,10 +21,10 @@ export const Header = () => {
             90s Shop
           </Typography>
           <Box>
-            <IconButton onClick={() => navigate({ to: "/" })} size="large" color="inherit">
+            <IconButton id="link-to-home" onClick={() => navigate({ to: "/" })} size="large">
               <HomeIcon />
             </IconButton>
-            <IconButton onClick={() => navigate({ to: "/cart" })} size="large" color="inherit">
+            <IconButton id="link-to-cart" onClick={() => navigate({ to: "/cart" })} size="large">
               <Badge badgeContent={cartManagement.cartCount} color="error">
                 <ShoppingCartIcon />
               </Badge>
